@@ -94,6 +94,10 @@ public class UserService {
         return userRepository.findAllByEnabled(true);
     }
 
+    public List<User> getAllDisabled(){
+        return userRepository.findAllByEnabled(false);
+    }
+
     public User getById(Long id) {
         return userRepository.findById(id).orElse(null);
     }

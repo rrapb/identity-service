@@ -42,6 +42,11 @@ public class PersonController {
         return ResponseEntity.ok(personService.preparePersonDTOList(personService.getAllEnabled()));
     }
 
+    @GetMapping("/disabled")
+    public ResponseEntity disabledPersons() {
+        return ResponseEntity.ok(personService.preparePersonDTOList(personService.getAllDisabled()));
+    }
+
     @GetMapping("/enabledWithoutUsers")
     public ResponseEntity enabledWithoutUsers() {
         return ResponseEntity.ok(personService.preparePersonDTOList(personService.getAllEnabledWithoutUsersAssigned()));

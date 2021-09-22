@@ -35,6 +35,11 @@ public class RoleController {
         return ResponseEntity.ok(roleService.prepareRoleDTOList(roleService.getAllEnabled()));
     }
 
+    @GetMapping("/disabled")
+    public ResponseEntity disabledRoles() {
+        return ResponseEntity.ok(roleService.prepareRoleDTOList(roleService.getAllDisabled()));
+    }
+
     @GetMapping(value = "/id/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity getById(@PathVariable Long id) {
         return ResponseEntity.ok(roleService.prepareRoleDTO(roleService.getById(id).getId()));

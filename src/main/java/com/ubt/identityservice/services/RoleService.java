@@ -30,6 +30,10 @@ public class RoleService {
         return roleRepository.findAllByEnabled(true);
     }
 
+    public List<Role> getAllDisabled(){
+        return roleRepository.findAllByEnabled(false);
+    }
+
     public Role getById(Long id) {
         return roleRepository.findById(id).orElse(null);
     }

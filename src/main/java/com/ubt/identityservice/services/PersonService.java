@@ -33,6 +33,10 @@ public class PersonService {
         return personRepository.findAllByEnabled(true);
     }
 
+    public List<Person> getAllDisabled(){
+        return personRepository.findAllByEnabled(false);
+    }
+
     public List<Person> getAllEnabledWithoutUsersAssigned(){
         return personRepository.findAllWithoutUsers();
     }

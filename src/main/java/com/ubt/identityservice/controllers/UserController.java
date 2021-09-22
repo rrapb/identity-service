@@ -37,6 +37,11 @@ public class UserController {
         return ResponseEntity.ok(userService.prepareUserDTOList(userService.getAllEnabled()));
     }
 
+    @GetMapping("/disabled")
+    public ResponseEntity disabledUsers() {
+        return ResponseEntity.ok(userService.prepareUserDTOList(userService.getAllDisabled()));
+    }
+
     @GetMapping(value = "/id/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity getById(@PathVariable Long id) {
         return ResponseEntity.ok(userService.prepareUserDTO(userService.getById(id).getId()));
